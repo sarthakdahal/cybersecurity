@@ -1,0 +1,109 @@
+Per you request please find the below items that can be used for testing DLP rules, you’ll find an example of Source Code as the last grouping:
+
+Subject: 
+Validate McAfee DLP Functionality by generating a False Positive
+ 
+Body:
++Match: FMAEUS33WSS Confidential Commercial Information FMAEUS33
++Match: fmaeus33wss confidential commercial information fmaeus33
++Match: Confidential - Commercial Information 
++Match: confidential - commercial  information 
++Match: Confidential  –  Commercial Information 
++Match: confidential –  commercial  information 
+-Match: FMAEU Confidential and Commercial Properties with Information about ue33 - no popups
+ 
++Match: Confidential - Highly Restricted
++Match: confidential - highly restricted
++Match: Confidential – Highly Restricted
++Match: confidential – highly restricted
++Match: confidential highly restricted
++Match: Confidential Highly Restricted
+-Match: The following is confidential restricted
+-Match: Highly Confidential Restricted info herein
+ 
+ 
++Match: Confidential - Internal Distribution - no popups
++Match: confidential -  internal distribution - no popups
++Match: Confidential – Internal Distribution - no popups
++Match: confidential –   internal distribution - no popups
++Match: Confidential      Internal      Distribution - no popups
++Match: confidential internal distribution - no popups
+-Match: "... contains confidential - and – internal material for distribution" - no popups
+ 
+ 
++Match: Confidential    - Restricted
++Match: confidential   -   restricted
++Match: Confidential  –  Restricted
++Match: confidential –  restricted
++Match: Confidential   Restricted
++Match: confidential restricted
+-Match: "... contains confidential - and restricted – internal Restricted for distribution" - no popups
+ 
+Hello Jack, please see attached for a copy of the PRIVILEGED & CONFIDENTIAL letter.
+Also, please keep in mind our ATTORNEY CLIENT PRIVILEGE. 
+The following email contains Confidential Treatment and FOIA Exemption Requested.
+ 
+ 
++Match: American Express                        378282246310005 - no popup but rejected by iron port
++Match: China UnionPay                           6222988812340000 - popup but didnt reject
++Match: Diner's Club                                  36006666333344 - popup and rejected
++Match: Discover                                                       6445 6445 6445 6445 - popup but didnt reject
++Match: JCB                                                  3569 9900 1009 5841 - popup and rejected
++Match: Mastercard                                   5370-4638-8881-3020 - popup and rejected
++Match: Simple, dash delimited               4929-3813-3266-4295 - popup and rejected
++Match: Visa                                                4929-3813-3266-4295 - popup and rejected
+ 
+ 
++Match: Driver License OH551248 - popup and rejected
++Match: driver license  oh551248 - popup and rejected
++Match: Drivers License  OH551248 - popup and rejected
++Match: drivers license    oh551248 - popup and rejected
++Match: DL #  OH551248 - popup and rejected
++Match: dl# oh551248 - popup and rejected
+ 
+ 
++Match: SSN 158548542 - no popups but rejected
++Match: ssn 158-54-8542 - popup and rejected
++Match: Social Security 158 54 8542 -  popup and rejected
++Match: social security 158–54–8542 - popup and rejected
++Match: Social Security Number 158 - 54 - 8542 - popup but didnt reject
++Match: social security number 158 – 54 – 8542 - popup but didnt reject
+ 
+Source Code Sample - popup 
+# Import the modules
+import sys
+import random
+ 
+ans = True
+ 
+while ans:
+    question = raw_input("Ask the magic 8 ball a question: (press enter to quit) ")
+    
+    answers = random.randint(1,8)
+    
+    if question == "":
+        sys.exit()
+    
+    elif answers == 1:
+        print "It is certain"
+    
+    elif answers == 2:
+        print "Outlook good"
+    
+    elif answers == 3:
+        print "You may rely on it"
+    
+    elif answers == 4:
+        print "Ask again later"
+    
+    elif answers == 5:
+        print "Concentrate and ask again"
+    
+    elif answers == 6:
+        print "Reply hazy, try again"
+    
+    elif answers == 7:
+        print "My reply is no"
+    
+    elif answers == 8:
+        print "My sources say no"
