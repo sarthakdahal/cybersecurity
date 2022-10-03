@@ -1,4 +1,4 @@
-Per you request please find the below items that can be used for testing DLP rules, you’ll find an example of Source Code as the last grouping:
+Per you request please find the below items that can be used for testing DLP rules, youâ€™ll find an example of Source Code as the last grouping:
 
 Subject: 
 Validate McAfee DLP Functionality by generating a False Positive
@@ -8,14 +8,14 @@ Body:
 +Match: fmaeus33wss confidential commercial information fmaeus33
 +Match: Confidential - Commercial Information 
 +Match: confidential - commercial  information 
-+Match: Confidential  –  Commercial Information 
-+Match: confidential –  commercial  information 
++Match: Confidential  â€“  Commercial Information 
++Match: confidential â€“  commercial  information 
 -Match: FMAEU Confidential and Commercial Properties with Information about ue33 - no popups
  
 +Match: Confidential - Highly Restricted
 +Match: confidential - highly restricted
-+Match: Confidential – Highly Restricted
-+Match: confidential – highly restricted
++Match: Confidential â€“ Highly Restricted
++Match: confidential â€“ highly restricted
 +Match: confidential highly restricted
 +Match: Confidential Highly Restricted
 -Match: The following is confidential restricted
@@ -24,20 +24,20 @@ Body:
  
 +Match: Confidential - Internal Distribution - no popups
 +Match: confidential -  internal distribution - no popups
-+Match: Confidential – Internal Distribution - no popups
-+Match: confidential –   internal distribution - no popups
++Match: Confidential â€“ Internal Distribution - no popups
++Match: confidential â€“   internal distribution - no popups
 +Match: Confidential      Internal      Distribution - no popups
 +Match: confidential internal distribution - no popups
--Match: "... contains confidential - and – internal material for distribution" - no popups
+-Match: "... contains confidential - and â€“ internal material for distribution" - no popups
  
  
 +Match: Confidential    - Restricted
 +Match: confidential   -   restricted
-+Match: Confidential  –  Restricted
-+Match: confidential –  restricted
++Match: Confidential  â€“  Restricted
++Match: confidential â€“  restricted
 +Match: Confidential   Restricted
 +Match: confidential restricted
--Match: "... contains confidential - and restricted – internal Restricted for distribution" - no popups
+-Match: "... contains confidential - and restricted â€“ internal Restricted for distribution" - no popups
  
 Hello Jack, please see attached for a copy of the PRIVILEGED & CONFIDENTIAL letter.
 Also, please keep in mind our ATTORNEY CLIENT PRIVILEGE. 
@@ -65,9 +65,9 @@ The following email contains Confidential Treatment and FOIA Exemption Requested
 +Match: SSN 158548542 - no popups but rejected
 +Match: ssn 158-54-8542 - popup and rejected
 +Match: Social Security 158 54 8542 -  popup and rejected
-+Match: social security 158–54–8542 - popup and rejected
++Match: social security 158â€“54â€“8542 - popup and rejected
 +Match: Social Security Number 158 - 54 - 8542 - popup but didnt reject
-+Match: social security number 158 – 54 – 8542 - popup but didnt reject
++Match: social security number 158 â€“ 54 â€“ 8542 - popup but didnt reject
  
 Source Code Sample - popup 
 # Import the modules
@@ -107,3 +107,111 @@ while ans:
     
     elif answers == 8:
         print "My sources say no"
+        
+        
+        FMAEUS33WSS Confidential Commercial Information FMAEUS33
+fmaeus33wss confidential commercial information fmaeus33
+Confidential - Commercial Information 
+confidential - commercial  information 
+Confidential  â€“  Commercial Information 
+confidential â€“  commercial  information 
+FMAEU Confidential and Commercial Properties with Information about ue33 
+ 
+Confidential - Highly Restricted
+confidential - highly restricted
+Confidential â€“ Highly Restricted
+confidential â€“ highly restricted
+confidential highly restricted
+Confidential Highly Restricted
+The following is confidential restricted
+Highly Confidential Restricted info herein
+ 
+ 
+Confidential - Internal Distribution 
+confidential -  internal distribution 
+Confidential â€“ Internal Distribution 
+confidential â€“   internal distribution 
+Confidential      Internal      Distribution 
+confidential internal distribution 
+"... contains confidential - and â€“ internal material for distribution" 
+ 
+ 
+Confidential    - Restricted
+confidential   -   restricted
+Confidential  â€“  Restricted
+confidential â€“  restricted
+Confidential   Restricted
+confidential restricted
+"... contains confidential - and restricted â€“ internal Restricted for distribution" 
+ 
+Hello Jack, please see attached for a copy of the PRIVILEGED & CONFIDENTIAL letter.
+Also, please keep in mind our ATTORNEY CLIENT PRIVILEGE. 
+The following email contains Confidential Treatment and FOIA Exemption Requested.
+ 
+ 
+American Express                        378282246310005 
+China UnionPay                           6222988812340000
+Diner's Club                                  36006666333344
+Discover                                         6445 6445 6445 6445
+JCB                                                  3569 9900 1009 5841
+Mastercard                                   5370-4638-8881-3020
+Simple, dash delimited               4929-3813-3266-4295
+Visa                                                4929-3813-3266-4295
+ 
+ 
+Driver License OH551248
+driver license  oh551248
+Drivers License  OH551248
+drivers license    oh551248
+DL #  OH551248
+dl# oh551248
+ 
+ 
+SSN 158548542
+ssn 158-54-8542
+Social Security 158 54 8542
+social security 158â€“54â€“8542
+Social Security Number 158 - 54 - 8542
+social security number 158 â€“ 54 â€“ 8542
+ 
+Source Code Sample 
+# Import the modules
+import sys
+import random
+ 
+ans = True
+ 
+while ans:
+    question = raw_input("Ask the magic 8 ball a question: (press enter to quit) ")
+    
+    answers = random.randint(1,8)
+    
+    if question == "":
+        sys.exit()
+    
+    elif answers == 1:
+        print "It is certain"
+    
+    elif answers == 2:
+        print "Outlook good"
+    
+    elif answers == 3:
+        print "You may rely on it"
+    
+    elif answers == 4:
+        print "Ask again later"
+    
+    elif answers == 5:
+        print "Concentrate and ask again"
+    
+    elif answers == 6:
+        print "Reply hazy, try again"
+    
+    elif answers == 7:
+        print "My reply is no"
+    
+    elif answers == 8:
+        print "My sources say no"
+
+        
+        
